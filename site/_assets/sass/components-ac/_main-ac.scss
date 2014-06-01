@@ -1,0 +1,112 @@
+@import "./mixins/_mixins";
+@import "compass";
+@import "components-ac/_variables-ac";
+
+$font-family: Arial, Helvetica, sans-serif;
+$color1: #bf4330;
+$color2: #39acef;
+$color2: #bef56e;
+
+html, body, #mapDiv {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mapDiv {
+  position: relative;
+  width: 75%;
+}
+
+body {
+  background-color: #FFF;
+  overflow: hidden;
+  font-family: "Trebuchet MS";
+}
+
+h1 {
+  color: $orange;
+  font-size: 1.25em;
+}
+
+.mainContent {
+}
+
+nav {
+    width: 100%;
+     @include background-image(linear-gradient(white, #cccccc, #eaeaea));
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+       @include background-image(linear-gradient(white, #cccccc, #eaeaea));
+       ul {
+          display:none;
+          li {
+            a {
+              padding: 15px;
+              background-color: $light_grey;
+            }
+          }
+       }
+    }
+
+
+    li {
+      margin: 0 auto;
+      display: inline-block;
+      background-color: $light_grey;
+      @include background-image(linear-gradient(white, #cccccc, #eaeaea));
+      border-right:$regular_border;
+      box-shadow:$regular_shadow;
+      &:hover > ul {
+        display: block;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+      text-align: center;
+      &:hover {
+        color:$red;
+      }
+    }
+  }
+
+form {
+  .row {
+    padding-top: emCalc(16);
+    .large-3 {
+      text-align: right;
+      padding-top: 5px;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.special {
+  display:none;
+}
+
+footer {
+  background-color: $light_grey;
+  box-shadow: $inner-shadow;
+  width: 100%;
+  box-sizing: border-box;
+  clear: both;
+  position: fixed;
+  min-height: 3em;
+  bottom: 0;
+  margin-top:3em;
+}
+
+img {
+  padding: 50px;
+}
+
+

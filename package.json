@@ -1,0 +1,19 @@
+{
+  "name": "hack4co",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~3.1.0",
+    "path": "~0.4.9",
+    "mongoose": ">=0 2.3.1",
+    "mongojs": "0.4.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "sendgrid": "~1.0.4",
+    "passport": "~0.2.0"
+  }
+}

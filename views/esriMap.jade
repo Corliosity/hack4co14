@@ -1,0 +1,10 @@
+extends ./templates/layout
+block content
+	section.mainContent.row
+		.large-12.columns
+			h1 Find your Place
+	script(type='text/javascript', src='site/_assets/js/esriMap.js')
+	section.row
+		.columns
+			.small-4.columns#mapDiv
+			.small-2.columns#panelSelect

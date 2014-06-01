@@ -1,0 +1,93 @@
+extends ./templates/layout
+block content
+	section.mainContent.row
+		.large-12.columns
+			h1 Tell Us a little bit about you or neighborhood
+		#neighboors
+		| <script id='hood_form' type='text/template'>
+		|	<form action='' id='hood-form'>
+		|		<div class='row'>
+		|			<div class='large-3 columns'>
+		|				<label>Neighboorhood Name</label>
+		|			</div>
+		|			<div class='large-5 columns'>
+		|				<input type='text' name='name' class='user-name'/>
+		|			</div>
+		|			<div class='large-4 columns'>
+		|			</div>
+		|		</div>
+		|		<div class='row'>
+		|			<div class='large-3 columns'>
+		|				<label>Descriptive Factors</label>
+		|			</div>
+		|			<div class='large-5 columns'>
+		|				<input type='text' name='username' class='user-userName'/>
+		|			</div>
+		|			<div class='large-4 columns'>
+		|				<small>&#42; required</small>
+		|			</div>
+		|		</div>
+		|		<div class='row'>
+		|			<div class='large-3 columns'>
+		|				<label>Notes</label>
+		|			</div>
+		|			<div class='large-5 columns'>
+		|				<input type='text' name='password' class='user-password'/>
+		|			</div>
+		|			<div class='large-4 columns'>
+		|				<small>&#42; required</small>
+		|			</div>
+		|		</div>
+		|		<div class='row'>
+		|			<div class='large-3 columns'>
+		|				<label>City</label>
+		|			</div>
+		|			<div class='large-5 columns'>
+		|				<input type='text' name='city' class='user-city'/>
+		|			</div>
+		|			<div class='large-4 columns'>
+		|				<small>&#42; required</small>
+		|			</div>
+		|		</div>
+		|		<div class='row'>
+		|			<div class='large-3 columns'>
+		|				<label>Email</label>
+		|			</div>
+		|			<div class='large-5 columns'>
+		|				<input type='text' name='email' class='user-email'/>
+		|			</div>
+		|			<div class='large-4 columns'>
+		|				<small>&#42; required</small>
+		|			</div>
+		|		</div>
+		|		<div class='row'>
+		|			<div class='large-3 small-offset-3 columns'>
+		|				<input type='submit' value='Submit'/>
+		|			</div>
+		|		</div>
+		|	</form>
+		|</script>
+		|<script id='user_template' type='text/template'>
+		|	<li data-id='<%= user.id %>'>
+		|		<%= user.get('name') %>
+		|		<button> Done!</button>
+		|	</li>
+		|</script>
+		|<script id='users_template' type='text/template'>
+		|	<%= user_form() %>
+		|	<ul>	
+		|		<% _.each(users, function(user) { %>
+		|			<%= user_template({user: user}) %>
+		|		<% }); %>
+		|	</ul>
+		|</script>
+		|<p></p>
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.1/backbone-min.js')
+		script(src='site/_assets/js/neighboorhood.js')
+		script.
+			var hoods = new App.Hoods;
+			hoods.reset(!{hoods});
+			$(function(){
+				App.init();
+			})

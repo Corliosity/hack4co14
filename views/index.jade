@@ -1,0 +1,23 @@
+extends ./templates/layout
+block content
+	section.mainContent.row
+		.large-12.columns
+			h1 Hacking a Better Neighborhood
+
+	section.row
+		.large-4.columns
+			.panel
+				p Find yourself in a better place
+				form
+					.row
+						label Search By: interest, areas, or hobbies
+						input
+					.row
+						.large-2.push-2.columns
+							button.button.radius(type="submit", value="Submit") Submit
+		.large-8.columns
+			.panel
+				img(src="site/_assets/img/logo.png")
+				img(src="site/_assets/img/logo-esri-footer.jpg")
+				img(src="site/_assets/img/denverlogo.png")
+				img(src="site/_assets/img/sendgrid.jpg")
